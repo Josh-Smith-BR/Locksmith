@@ -337,6 +337,7 @@ public extension SecureStorable where Self : GenericPasswordSecureStorable {
         
         dictionary[String(kSecAttrService)] = service
         dictionary[String(kSecAttrGeneric)] = generic
+        dictionary[String(kSecAttrAccessible)] = String(kSecAttrAccessibleWhenUnlockedThisDeviceOnly)
         dictionary[String(kSecClass)] = LocksmithSecurityClass.genericPassword.rawValue
         
         dictionary = Dictionary(initial: dictionary, toMerge: describableSecureStoragePropertyDictionary)
